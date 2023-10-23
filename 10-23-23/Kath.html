@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>From Kath</title>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="HTML_files/style.css"> <!-- Update the path to your CSS file -->
+
+</head>
+<body style="display: flex; align-items: center; justify-content: center; background: black;">
+    <div class="test" style="height: 100vh; width: 100%; background: black; display: flex; align-items: center; justify-content: center;">
+        <h1 class="text" style="font-size: 45px; color: aqua; text-shadow: 0 0 5px white; font-family: monospace;"></h1>
+    </div>
+    <audio id="backgroundMusic" src="Music/My_love.mp3" preload="auto" controls style="display: none;"></audio>
+    <script>
+        // Function to play background music
+        function playBackgroundMusic() {
+            const backgroundMusic = document.getElementById("backgroundMusic");
+            backgroundMusic.play();
+        }
+
+        // Show confirmation message and play music
+        if (confirm("I hope this brings a smile to your face")) {
+            playBackgroundMusic();
+
+            let message = "Dear Ms. Mary Leuellyn Lauron,\n\n" +
+                "I miss you. Studies are keeping you busy lately, and I couldn't be prouder of the effort you're putting in to cope with the demands of life. Babe, I love you. Don't feel pressured; take things slowly and always take care of yourself. I'll always wait for you.\n\n" +
+                "I love you always,\n" +
+                "Kath ❤️";
+
+            let messageArray = message.split('');
+            let counter = 0;
+            let textElement = document.querySelector(".text");
+
+            setInterval(() => {
+                if (counter < messageArray.length) {
+                    textElement.innerHTML += messageArray[counter];
+                    counter++;
+                }
+            }, 50);
+        }
+    </script>
+</body>
+</html>
